@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\nqdat\\.nuget\\packages\\": {}
+    "C:\\Users\\Duc\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\nqdat\\source\\repos\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal.csproj",
+      "projectUniqueName": "C:\\Users\\Duc\\Desktop\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal.csproj",
       "projectName": "DaoDinhDuc_btl_elgamal",
-      "projectPath": "C:\\Users\\nqdat\\source\\repos\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal.csproj",
-      "packagesPath": "C:\\Users\\nqdat\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\nqdat\\source\\repos\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal\\obj\\",
+      "projectPath": "C:\\Users\\Duc\\Desktop\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal.csproj",
+      "packagesPath": "C:\\Users\\Duc\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Duc\\Desktop\\DaoDinhDuc_btl_elgamal\\DaoDinhDuc_btl_elgamal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\nqdat\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Duc\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
