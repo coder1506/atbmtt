@@ -148,7 +148,7 @@ namespace DaoDinhDuc_btl_elgamal
             catch
             {
 				//thông báo cho người dùng khi có lỗi ngoại lệ
-                MessageBox.Show("khoá chưa được tìm thấy xin vui lòng tìm lại", "error", MessageBoxButtons.OK);
+                MessageBox.Show("khoá chưa được tìm thấy xin vui lòng tìm lại", "error", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
 			DisableField();
 			// gán giá trị vào các ô input trong chương trình
@@ -158,7 +158,7 @@ namespace DaoDinhDuc_btl_elgamal
             xtxt.Text = x.ToString();
             ktxt.Text = k.ToString();
             ytxt.Text = y.ToString();
-			MessageBox.Show("Tạo khoá thành công !!!", "success", MessageBoxButtons.OK);
+			MessageBox.Show("Tạo khoá thành công !!!", "success", MessageBoxButtons.OK,MessageBoxIcon.Information);
 		}
 
         private void textBox6_TextChanged(object sender, EventArgs e)
@@ -257,10 +257,10 @@ namespace DaoDinhDuc_btl_elgamal
 				if (!CheckKey()) { MessageBox.Show("Chữ ký không hợp lệ", "error", MessageBoxButtons.OK); return; }
 			}
 			//check xem người dùng đã chọn file để ký hay chưa
-			if (pathFile.Text == "") { MessageBox.Show("Xin vui lòng chọn file để ký", "error", MessageBoxButtons.OK); return; }
+			if (pathFile.Text == "") { MessageBox.Show("Xin vui lòng chọn file để ký", "error", MessageBoxButtons.OK,MessageBoxIcon.Warning); return; }
 			//check xem người dùng đã tạo ra khoá hay chưa
-			if (!HasKeyAuto && !CheckKeyNull()) { MessageBox.Show("Xin vui lòng chọn khoá để ký", "error", MessageBoxButtons.OK); return; }
-			DialogResult result = MessageBox.Show("Vui lòng chọn vị trí để lưu file chữ ký", "Thông báo", MessageBoxButtons.YesNo);
+			if (!HasKeyAuto && !CheckKeyNull()) { MessageBox.Show("Xin vui lòng chọn khoá để ký", "error", MessageBoxButtons.OK,MessageBoxIcon.Warning); return; }
+			DialogResult result = MessageBox.Show("Vui lòng chọn vị trí để lưu file chữ ký", "Thông báo", MessageBoxButtons.YesNo,MessageBoxIcon.Information);
 			if (result == DialogResult.Yes)
 			{
 				//tìm vị trí để lưu chữ ký
@@ -268,6 +268,7 @@ namespace DaoDinhDuc_btl_elgamal
 				{
 					_selectedLocation = folderBrowserDialog1.SelectedPath;
 				}
+				else return;
 			}
 			else return;
 			//nếu không vi phạm 2 điều trên thì bắt đầu ký thôi :))
@@ -282,7 +283,7 @@ namespace DaoDinhDuc_btl_elgamal
 			using (StreamWriter sw = new StreamWriter(_selectedLocation))
             {
 				sw.WriteLine(Ky(content));
-				MessageBox.Show("ký thành công !!! Chữ ký đã được lưu vào trong file chuky.sig", "success", MessageBoxButtons.OK);
+				MessageBox.Show("ký thành công !!! Chữ ký đã được lưu lại", "success", MessageBoxButtons.OK,MessageBoxIcon.Information);
 			}
 		}
 
@@ -298,7 +299,7 @@ namespace DaoDinhDuc_btl_elgamal
         private void checkSignatureBtn_Click(object sender, EventArgs e)
         {
 			//Nếu chưa có file thì làm sao mà kiểm tra được đây :((
-			if (fileCheck.Text == "") { MessageBox.Show("Xin vui lòng chọn file để kiểm tra", "error", MessageBoxButtons.OK); return; }
+			if (fileCheck.Text == "") { MessageBox.Show("Xin vui lòng chọn file để kiểm tra", "error", MessageBoxButtons.OK,MessageBoxIcon.Error); return; }
 			// có file rồi thì bắt đầu kiểm tra thôi
 			else {
 				//trước tiên đọc file xem có gì nào
@@ -308,13 +309,13 @@ namespace DaoDinhDuc_btl_elgamal
 				// chữ ký có khớp không nhỉ ???
 				if (KiemTra(chuKy, content)) { 
 					// có thì thông báo ra thôi
-					MessageBox.Show("Văn bản không có gì thay đổi", "thông báo", MessageBoxButtons.OK); 
+					MessageBox.Show("Văn bản không có gì thay đổi", "thông báo", MessageBoxButtons.OK,MessageBoxIcon.Information); 
 					return; 
 				}
                 else
                 {
 					//không thì cũng thế :((
-					MessageBox.Show("văn bản đã được chỉnh sửa hoặc chữ ký không chính xác", "thông báo", MessageBoxButtons.OK); return;
+					MessageBox.Show("văn bản đã được chỉnh sửa hoặc chữ ký không chính xác", "thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
 				}
 			}
 		}
